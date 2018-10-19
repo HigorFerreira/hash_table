@@ -6,6 +6,10 @@ using namespace std;
 
 Hash::Hash(int tam){
 	this->tam = tam;
+	this->vetor = new List*[tam];
+	for(int i = 0; i < tam; i++){
+		this->vetor[i] = 0;
+	}
 }
 
 int Hash::hash_function(Item *obj){
@@ -28,4 +32,9 @@ int Hash::hash_function(Item *obj){
 	//cout<<res<<endl;
 	obj->setChave(res);
 	return res;
+}
+
+bool Hash::insert(Item *item){
+	//int index = Hash::hash_function(item);
+	
 }

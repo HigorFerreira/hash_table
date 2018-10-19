@@ -3,10 +3,11 @@
 Node::Node(Item *item)
 {
     this->dados = item;
+    this->proximo = 0;
 }
 
 Node::~Node(){
-    delete this->dados;
+    delete this->proximo;
 }
 
 Node *Node::mount(Item * item){
