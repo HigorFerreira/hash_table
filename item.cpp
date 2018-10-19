@@ -40,12 +40,12 @@ void Item::setTelefone(double value)
     telefone = value;
 }
 
-string Item::getChave() const
+int Item::getChave() const
 {
     return chave;
 }
 
-void Item::setChave(const string &value)
+void Item::setChave(const int &value)
 {
     chave = value;
 }

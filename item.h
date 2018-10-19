@@ -11,7 +11,7 @@ class Item
     char sexo;
     string email;
     double telefone;
-    string chave;
+    int chave;
 
 public:
     Item();
@@ -23,8 +23,8 @@ public:
     void setEmail(const string &value);
     double getTelefone() const;
     void setTelefone(double value);
-    string getChave() const;
-    void setChave(const string &value);
+    int getChave() const;
+    void setChave(const int &value);
 };
 
 #endif // ITEM_H

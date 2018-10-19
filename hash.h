@@ -2,14 +2,16 @@
 #define HASH_H
 
 #include"list.h"
+#include"item.h"
 
 class Hash
 {
 	private:
 		int tam;
-		List vetor**;
+		List **vetor;
 	public:
-		int hash_function(/* key */);	//(0 =< x < tam)
+		Hash(int);
+		int hash_function(Item*);	//(0 =< x < tam)
 		bool insert(Item*);
 		Item* remove(Item*);
 		Item* select(Item*);
