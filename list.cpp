@@ -19,7 +19,10 @@ bool List::insert(Item *item){
 	this->end = nodeCreated;
 }
 
-Item *List::remove(Node *no){
+Item *List::remove(Item *item){
+	Node no = item->getNode();
+	if(no->getNode() == 0) return 0;
+	
 	Item *item = no->getData();
 	
 	if(no == this->start){
@@ -40,5 +43,19 @@ Item *List::remove(Node *no){
 }
 
 Item *List::find(Item *item){
-
+	if(isEmpty())
+		return 0;
+		
+	Node *obj = this->start;
+	while(obj != 0){
+		if(item->getNome() == obj->getData()->getNome() && item->getEmail() == obj->getData()->getEmail())
+			break;
+		else
+			obj = obj->getNext();
+	}
+	
+	if(obj != 0)
+		return obj->getData();
+	else
+		return 0;
 }

@@ -50,6 +50,14 @@ void Item::setChave(const int &value)
     chave = value;
 }
 
+void Item::setNode(Node *n){
+	this->node = n;
+}
+
+Node * Item::getNode(){
+	return this->getNode();
+}
+
 Item::Item()
 {
 	this->node = 0;

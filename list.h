@@ -11,7 +11,7 @@ public:
     List();
     bool isEmpty();
     bool insert(Item *);
-    Item *remove(Node *);
+    Item *remove(Item *);
     Item *find(Item *);
 };
 

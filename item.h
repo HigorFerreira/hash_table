@@ -1,8 +1,8 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include"node.h"
 #include<string>
+#include"node.h"
 
 using namespace std;
 
@@ -29,8 +29,8 @@ public:
     int getChave() const;
     void setChave(const int &value);
     
-    void setNode(Node *n){ this->node = n;}
-    Node *getNode(){ return this->node;}
+    void setNode(Node *n);
+    Node *getNode();
 };
 
 #endif // ITEM_H

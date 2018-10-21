@@ -44,5 +44,9 @@ bool Hash::insert(Item *item){
 }
 
 Item * Hash::remove(Item *item){
+	this->vetor[item->getChave()]->remove(item);
+}
+
+Item * Hash::select(Item *item){
 	
 }
