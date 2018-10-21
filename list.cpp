@@ -39,6 +39,18 @@ Item *List::remove(Node *no){
 	return item;
 }
 
-Item *List::find(Item *item){
-
+Node *List::find(Item *item){
+	Node *obj = this->start;
+	
+	while(obj != 0){
+		if(item->getNome() == obj->getData()->getNome() && item->getEmail() == obj->getData()->getEmail())
+			break;
+		else
+			obj = obj->getNext();
+	}
+	
+	if(obj == 0)
+		return 0;
+	else
+		return obj;
 }

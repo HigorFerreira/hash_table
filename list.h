@@ -12,7 +12,7 @@ public:
     bool isEmpty();
     bool insert(Item *);
     Item *remove(Node *);
-    Item *find(Item *);
+    Node *find(Item *);
 };
 
 #endif // LIST_H
