@@ -14,6 +14,8 @@ class Item
     double telefone;
     int chave;
     
+    Node *node;
+    
 public:
     Item();
     string getNome() const;
@@ -26,6 +28,9 @@ public:
     void setTelefone(double value);
     int getChave() const;
     void setChave(const int &value);
+    
+    void setNode(Node *n){ this->node = n;}
+    Node *getNode(){ return this->node;}
 };
 
 #endif // ITEM_H

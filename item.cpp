@@ -52,5 +52,5 @@ void Item::setChave(const int &value)
 
 Item::Item()
 {
-
+	this->node = 0;
 }

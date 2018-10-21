@@ -2,7 +2,7 @@
 
 Node::Node(Item *item)
 {
-    this->dados = item;
+    setData(item);
     this->proximo = 0;
 }
 
@@ -25,6 +25,7 @@ void Node::setNext(Node *node){
 
 void Node::setData(Item *data){
     this->dados = data;
+    this->dados->setNode(this);
 }
 
 Item *Node::getData(){
