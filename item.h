@@ -1,7 +1,6 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include"node.h"
 #include<string>
 
 using namespace std;
@@ -13,6 +12,8 @@ class Item
     string email;
     double telefone;
     int chave;
+    
+    Node *node;
     
 public:
     Item();
@@ -26,6 +27,9 @@ public:
     void setTelefone(double value);
     int getChave() const;
     void setChave(const int &value);
+    
+    void setNode(Node *n){ this->node = n;}
+    Node *getNode(){ return this->node;}
 };
 
 #endif // ITEM_H
