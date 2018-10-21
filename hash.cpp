@@ -8,7 +8,7 @@ Hash::Hash(int tam){
 	this->tam = tam;
 	this->vetor = new List*[tam];
 	for(int i = 0; i < tam; i++){
-		this->vetor[i] = 0;
+		this->vetor[i] = new List;
 	}
 }
 
@@ -36,5 +36,13 @@ int Hash::hash_function(Item *obj){
 
 bool Hash::insert(Item *item){
 	//int index = Hash::hash_function(item);
+	int index = hash_function(item);
+	
+	this->vetor[index]->insert(item);
+	
+	return true;
+}
+
+Item * Hash::remove(Item *item){
 	
 }
