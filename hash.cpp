@@ -44,5 +44,19 @@ bool Hash::insert(Item *item){
 }
 
 Item * Hash::remove(Item *item){
-	
+	int index = hash_function(item);
+	Node *node = this->vetor[index]->find(item);
+	if(node == 0)
+		return 0;
+	else
+		return this->vetor[index]->remove(node);
+}
+
+Item * Hash::select(Item *item){
+	int index = hash_function(item);
+	Node *node = this->vetor[index]->find(item);
+	if(node == 0)
+		return 0;
+	else
+		return node->getData();
 }
