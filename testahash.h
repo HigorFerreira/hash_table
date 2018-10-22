@@ -14,6 +14,7 @@ class TestaHash
         TestaHash(int);
 		void menu();
 		Item* criaItem();
+        Item* criaItem(bool);
         void insert();
         void remove();
         void slct();
