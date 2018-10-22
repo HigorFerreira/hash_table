@@ -14,6 +14,7 @@ int main(){
 	double auxd;
 	
 	do{
+		cin.ignore();
 		pessoa = new Item;
 		cout<<"================ Hash Table ================\n";
 		cout<<"Digite o nome: ";
@@ -29,8 +30,11 @@ int main(){
 		cin>>auxd;
 		pessoa->setTelefone(auxd);
 		cout<<"-------------------------------------------\n";
-		th->insert(pessoa);
-		cout<<"Inserido com sucesso.\n";
+		insertionResponse res = th->insert(pessoa);
+		if(res.sucess)
+			cout<<pessoa->getNome()<<endl<<"Inserido com sucesso, com hash "<<res.hash<<endl;
+		else
+			cout<<"Falha na insercao";
 		cout<<"-------------------------------------------\n";
 		cout<<"Deseja adicionar outra pessoa?(0/1): ";
 		cin>>op;

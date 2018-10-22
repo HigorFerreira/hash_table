@@ -34,13 +34,18 @@ int Hash::hash_function(Item *obj){
 	return res;
 }
 
-bool Hash::insert(Item *item){
+insertionResponse Hash::insert(Item *item){
+	insertionResponse res;
 	//int index = Hash::hash_function(item);
 	int index = hash_function(item);
 	
 	this->vetor[index]->insert(item);
 	
-	return true;
+	res.sucess = true;
+	//res.msg = item->getNome()  + " inserido com hash " + index + "\n";
+	res.hash = index;
+	
+	return res;
 }
 
 Item * Hash::remove(Item *item){
