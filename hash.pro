@@ -17,9 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp \
     item.cpp \
     node.cpp \
-    list.cpp
+    list.cpp \
+    hash.cpp \
+    testahash.cpp
 
 HEADERS += \
     item.h \
     node.h \
-    list.h
+    list.h \
+    hash.h \
+    testahash.h
