@@ -17,7 +17,7 @@ int main(){
 		pessoa = new Item;
 		cout<<"================ Hash Table ================\n";
 		cout<<"Digite o nome: ";
-		cin>>aux;
+		getline(cin, aux);
 		pessoa->setNome(aux);
 		cout<<"Digite o email: ";
 		cin>>aux;
@@ -29,6 +29,11 @@ int main(){
 		cin>>auxd;
 		pessoa->setTelefone(auxd);
 		cout<<"-------------------------------------------\n";
+		th->insert(pessoa);
+		cout<<"Inserido com sucesso.\n";
+		cout<<"-------------------------------------------\n";
+		cout<<"Deseja adicionar outra pessoa?(0/1): ";
+		cin>>op;
 	}while(op == true);
 	
 	
