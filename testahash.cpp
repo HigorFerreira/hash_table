@@ -60,8 +60,8 @@ Item * TestaHash::criaItem(bool){
         pessoa->setNome(aux);
         cout<<"Digite o email: ";
         cin>>aux;
-        /*
         pessoa->setEmail(aux);
+        /*
         cout<<"Digite o sexo: ";
         cin>>auxc;
         pessoa->setSexo(auxc);
@@ -111,7 +111,11 @@ void TestaHash::insert(){
 void TestaHash::remove(){
     Item *item = criaItem(true);
     Item *res = this->obj->remove(item);
-    cout<<res->getNome() + "\nDe hash " + std::to_string(res->getChave()) + " removido com sucesso\n";
+    if(res != 0)
+        cout<<"-------------------------------------------\n"<<
+              res->getNome() + "\nDe hash " + std::to_string(res->getChave()) + " removido com sucesso\n";
+    else
+        cout<<"-------------------------------------------\n"<<"Item nao encontrado\n";
     cout<<"-------------------------------------------\n";
     menu();
 }
@@ -119,7 +123,11 @@ void TestaHash::remove(){
 void TestaHash::slct(){
     Item * item = criaItem(true);
     Item *res = this->obj->select(item);
-    cout<<res->getNome() + "\nFoi encontrado no indice " + std::to_string(res->getChave());
+    if(res != 0)
+        cout<<"-------------------------------------------\n"<<
+              res->getNome() + "\nFoi encontrado no indice " + std::to_string(res->getChave()) + "\n";
+    else
+        cout<<"-------------------------------------------\n"<<"Item nao encontrado\n";
     cout<<"-------------------------------------------\n";
     menu();
 }
