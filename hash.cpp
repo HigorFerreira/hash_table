@@ -42,7 +42,7 @@ insertionResponse Hash::insert(Item *item){
 	this->vetor[index]->insert(item);
 	
 	res.sucess = true;
-	//res.msg = item->getNome()  + " inserido com hash " + index + "\n";
+    res.msg = item->getNome()  + " inserido com hash " + std::to_string(index) + "\n";
 	res.hash = index;
 	
 	return res;
