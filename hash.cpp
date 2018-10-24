@@ -1,6 +1,6 @@
 #include "hash.h"
 #include<string>
-//#include<iostream>
+#include<iostream>
 
 using namespace std;
 
@@ -13,37 +13,45 @@ Hash::Hash(int tam){
 }
 
 int Hash::hash_function(Item *obj){
-	long n1,n2,res;
-	n1=n2=res=0;
-	
-	for(int i = 0; i < obj->getNome().size(); i++){
-		n1 += (int)obj->getNome()[i];
-	}
-	
-	for(int i = 0; i < obj->getEmail().size(); i++){
-		n2 += (int)obj->getEmail()[i];
-	}
-	
-	//cout<<n1<<endl;
-	//cout<<n2<<endl;
-	res = (int)(n1*0.3 + n2*0.7);
-	//cout<<res<<endl;
-	res = res%this->tam;
-	//cout<<res<<endl;
-	obj->setChave(res);
-	return res;
+    string email = obj->getEmail(); // <- "gabriel@g.com"
+    long long hash = 1;
+
+    for(int i = 0; i < email.size(); i++){
+        hash *= (int)email[i];
+    }
+
+    for(int i = obj->getEmail().size() - 1; i > -1; i--){
+        hash += (int)email[i];
+    }
+
+    obj->setChave(hash);
+
+    int indice = hash%this->tam;
+
+    return indice;
 }
 
-insertionResponse Hash::insert(Item *item){
-	insertionResponse res;
+resposta Hash::insert(Item *item){
+    resposta res;
 	//int index = Hash::hash_function(item);
-	int index = hash_function(item);
+    int index = hash_function(item);
 	
+    if(index < 0)
+        index *= -1;
+
+    if(index > this->tam-1 || index < 0){
+        res.sucess = false;
+        res.msg = "Deu erro por que o indice e: " + to_string(index) + "\n";
+        return res;
+    }
+
 	this->vetor[index]->insert(item);
 	
 	res.sucess = true;
-    res.msg = item->getNome()  + " inserido com hash " + std::to_string(index) + "\n";
-	res.hash = index;
+    res.msg = item->getNome()  + "\nInserido com hash " + std::to_string(item->getChave()) + "\n"
+               + "Com indice ---> " + to_string(index) + "\n";
+    res.hash = item->getChave();
+    res.indice = index;
 	
 	return res;
 }

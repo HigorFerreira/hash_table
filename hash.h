@@ -8,7 +8,8 @@ typedef struct{
 	bool sucess;
 	long int hash;
 	string msg;
-}insertionResponse;
+    int indice;
+}resposta;
 
 class Hash
 {
@@ -19,7 +20,7 @@ class Hash
 	public:
 		Hash(int);
 		int hash_function(Item*);	//(0 =< x < tam)
-		insertionResponse insert(Item*);
+        resposta insert(Item*);
 		Item* remove(Item*);
 		Item* select(Item*);
 };

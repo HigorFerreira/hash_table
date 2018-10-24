@@ -40,14 +40,14 @@ void Item::setTelefone(double value)
     telefone = value;
 }
 
-int Item::getChave() const
+long long Item::getChave() const
 {
-    return chave;
+    return this->chave;
 }
 
-void Item::setChave(const int &value)
+void Item::setChave(const long long &value)
 {
-    chave = value;
+    this->chave = value;
 }
 
 Item::Item()

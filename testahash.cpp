@@ -99,11 +99,11 @@ void TestaHash::menu(){
 void TestaHash::insert(){
     Item *item = criaItem();
     cout<<"-------------------------------------------\n";
-    insertionResponse res = this->obj->insert(item);
+    resposta res = this->obj->insert(item);
     if(res.sucess)
         cout<<res.msg;
     else
-        cout<<"Falha na insercao";
+        cout<<res.msg;
     cout<<"-------------------------------------------\n";
     menu();
 }
