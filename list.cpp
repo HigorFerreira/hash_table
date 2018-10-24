@@ -43,7 +43,7 @@ Node *List::find(Item *item){
 	Node *obj = this->start;
 	
 	while(obj != 0){
-		if(item->getNome() == obj->getData()->getNome() && item->getEmail() == obj->getData()->getEmail())
+        if(item->getEmail() == obj->getData()->getEmail())
 			break;
 		else
 			obj = obj->getNext();

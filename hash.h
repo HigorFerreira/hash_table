@@ -23,6 +23,9 @@ class Hash
         resposta insert(Item*);
 		Item* remove(Item*);
 		Item* select(Item*);
+        int getTam(){
+            return this->tam;
+        }
 };
 
 #endif

@@ -53,11 +53,7 @@ Item * TestaHash::criaItem(bool){
 
         cin.ignore();
         pessoa = new Item;
-        //cout<<"================ Hash Table ================\n";
         cout<<"-------------------------------------------\n";
-        cout<<"Digite o nome: ";
-        getline(cin, aux);
-        pessoa->setNome(aux);
         cout<<"Digite o email: ";
         cin>>aux;
         pessoa->setEmail(aux);
@@ -125,7 +121,7 @@ void TestaHash::slct(){
     Item *res = this->obj->select(item);
     if(res != 0)
         cout<<"-------------------------------------------\n"<<
-              res->getNome() + "\nFoi encontrado no indice " + std::to_string(res->getChave()) + "\n";
+              res->getNome() + "\nFoi encontrado no indice " + std::to_string(res->getChave()%obj->getTam()) + "\n";
     else
         cout<<"-------------------------------------------\n"<<"Item nao encontrado\n";
     cout<<"-------------------------------------------\n";
